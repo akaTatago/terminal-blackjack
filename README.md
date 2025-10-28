@@ -22,6 +22,6 @@ As a Software Engineering student, I made this project as a way to apply concept
 In the terminal:
 
 ```bash
-g++ blackjack.cpp -o blackjack
+g++ blackjack.cpp -o blackjack -std=c++11
 ./blackjack
 
