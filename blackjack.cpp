@@ -309,17 +309,19 @@ int main()
     int points_arr[13] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 1};
 
     cout << ">How many chips do you want to start with??\n";
-    int chips;
+    int chips = 0;
     string inp;
     cin >> inp;
 
-    while (!is_a_num(inp) || to_num(inp) == 0)
-    {
-        cout << ">Invalid input.\n>How many chips do you want to start with???\n";
-        cin >> inp;
-    }
+    while(chips <= 0){
+        while (!is_a_num(inp) || to_num(inp) <= 0)
+        {
+            cout << ">Invalid input.\n>How many chips do you want to start with???\n";
+            cin >> inp;
+        }
 
-    chips = to_num(inp);
+        chips = to_num(inp);
+    }
 
 
     while (chips != 0)
@@ -384,7 +386,7 @@ int main()
         delete[] player_hand.cards;
         delete[] dealer_hand.cards;
 
-        if (chips != 0)
+        if (chips > 0)
         {
             cout << "\n--------------ENTER TO START---------------\n";
             cin.ignore();
