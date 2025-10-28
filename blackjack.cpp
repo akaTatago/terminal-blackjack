@@ -1,4 +1,8 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <string>
+#include <cstring>
 using namespace std;
 
 struct card
@@ -74,7 +78,7 @@ int get_points(deck *get)
 
     for (int i = 0; i < get->size; i++)
     {
-        if (get->cards[i].symbol != "A")
+        if (strcmp(get->cards[i].symbol, "A") != 0)
         {
             res += get->cards[i].points;
         }
